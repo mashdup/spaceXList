@@ -58,7 +58,16 @@ class SpaceXLaunchViewController: UIViewController {
         t.dataSource = self
         t.delegate = self
         t.backgroundColor = .clear
+        t.refreshControl = refreshControl
         return t
+    }()
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let r = UIRefreshControl()
+        r.addAction(UIAction(handler: { _ in
+            self.reloadData()
+        }), for: .valueChanged)
+        return r
     }()
     
     override func viewDidLoad() {
@@ -107,6 +116,7 @@ class SpaceXLaunchViewController: UIViewController {
         viewModel?.didUpdateLaunches = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+                self?.refreshControl.endRefreshing()
             }
         }
     }
