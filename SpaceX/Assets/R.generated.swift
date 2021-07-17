@@ -253,7 +253,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 21 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 26 localization keys.
     struct localizable {
       /// Value: %@ was founded by %@ in %@. It has now %@ employees, %@ launch sites, and is valued at USD %@
       static let company_INFO_FORMAT = Rswift.StringResource(key: "COMPANY_INFO_FORMAT", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -263,6 +263,10 @@ struct R: Rswift.Validatable {
       static let all_YEARS = Rswift.StringResource(key: "ALL_YEARS", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Ascending date
       static let ascending_DATE = Rswift.StringResource(key: "ASCENDING_DATE", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Cancel
+      static let canceL = Rswift.StringResource(key: "CANCEL", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Checkout videos
+      static let checkout_VIDEOS = Rswift.StringResource(key: "CHECKOUT_VIDEOS", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Company
       static let companY = Rswift.StringResource(key: "COMPANY", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Date/time
@@ -283,6 +287,8 @@ struct R: Rswift.Validatable {
       static let getting_ROCKET = Rswift.StringResource(key: "GETTING_ROCKET", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Launches
       static let launcheS = Rswift.StringResource(key: "LAUNCHES", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Lookup Wikipedia
+      static let lookup_WIKIPEDIA = Rswift.StringResource(key: "LOOKUP_WIKIPEDIA", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Mission
       static let missoN = Rswift.StringResource(key: "MISSON", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Rocket
@@ -295,6 +301,10 @@ struct R: Rswift.Validatable {
       static let successful_LAUNCH = Rswift.StringResource(key: "SUCCESSFUL_LAUNCH", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Update filters
       static let update_FILTERS = Rswift.StringResource(key: "UPDATE_FILTERS", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: View article
+      static let view_ARTICLE = Rswift.StringResource(key: "VIEW_ARTICLE", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: What do you like to do?
+      static let what_DO_YOU_LIKE_TO_DO = Rswift.StringResource(key: "WHAT_DO_YOU_LIKE_TO_DO", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Year
       static let yeaR = Rswift.StringResource(key: "YEAR", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
@@ -350,6 +360,32 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("ASCENDING_DATE", bundle: bundle, comment: "")
+      }
+
+      /// Value: Cancel
+      static func canceL(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("CANCEL", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CANCEL"
+        }
+
+        return NSLocalizedString("CANCEL", bundle: bundle, comment: "")
+      }
+
+      /// Value: Checkout videos
+      static func checkout_VIDEOS(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("CHECKOUT_VIDEOS", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "CHECKOUT_VIDEOS"
+        }
+
+        return NSLocalizedString("CHECKOUT_VIDEOS", bundle: bundle, comment: "")
       }
 
       /// Value: Company
@@ -482,6 +518,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("LAUNCHES", bundle: bundle, comment: "")
       }
 
+      /// Value: Lookup Wikipedia
+      static func lookup_WIKIPEDIA(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("LOOKUP_WIKIPEDIA", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "LOOKUP_WIKIPEDIA"
+        }
+
+        return NSLocalizedString("LOOKUP_WIKIPEDIA", bundle: bundle, comment: "")
+      }
+
       /// Value: Mission
       static func missoN(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -558,6 +607,32 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("UPDATE_FILTERS", bundle: bundle, comment: "")
+      }
+
+      /// Value: View article
+      static func view_ARTICLE(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("VIEW_ARTICLE", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "VIEW_ARTICLE"
+        }
+
+        return NSLocalizedString("VIEW_ARTICLE", bundle: bundle, comment: "")
+      }
+
+      /// Value: What do you like to do?
+      static func what_DO_YOU_LIKE_TO_DO(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("WHAT_DO_YOU_LIKE_TO_DO", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "WHAT_DO_YOU_LIKE_TO_DO"
+        }
+
+        return NSLocalizedString("WHAT_DO_YOU_LIKE_TO_DO", bundle: bundle, comment: "")
       }
 
       /// Value: Year

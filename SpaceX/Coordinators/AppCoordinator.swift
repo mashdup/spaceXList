@@ -49,4 +49,9 @@ class AppCoordinator: NSObject {
         self.navigationController.pushViewController(vc, animated: false)
         self.navigationController.setViewControllers([vc], animated: false)
     }
+    
+    func presentWebURL(_ url: URL?) {
+        guard let url = url else { return }
+        UIApplication.shared.open(url)
+    }
 }

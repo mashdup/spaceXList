@@ -115,12 +115,45 @@ class SpaceXLaunchViewController: UIViewController {
         viewModel?.getLaunches()
         viewModel?.getCompanyInfo()
     }
+    
+    func showLaunchActions(_ launch: SpaceXLaunch, sourceView: UIView? = nil) {
+        let alert = UIAlertController(title: "SpaceX", message: "WHAT_DO_YOU_LIKE_TO_DO".localised(), preferredStyle: .actionSheet)
+        if let article = launch.links?.article {
+            
+            alert.addAction(UIAlertAction(title: "VIEW_ARTICLE".localised(), style: .default, handler: { _ in
+                self.coordinator?.presentWebURL(URL(string: article))
+            }))
+        }
+        
+        if let wikipedia = launch.links?.wikipedia {
+            alert.addAction(UIAlertAction(title: "LOOKUP_WIKIPEDIA".localised(), style: .default, handler: { _ in
+                self.coordinator?.presentWebURL(URL(string: wikipedia))
+            }))
+            
+        }
+        
+        if let video = launch.links?.webcast {
+            
+            alert.addAction(UIAlertAction(title: "CHECKOUT_VIDEOS".localised(), style: .default, handler: { _ in
+                self.coordinator?.presentWebURL(URL(string: video))
+            }))
+        }
+        
+        alert.addAction(UIAlertAction(title: "CANCEL".localised(), style: .cancel, handler: nil))
+        alert.popoverPresentationController?.sourceView = sourceView
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension SpaceXLaunchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let h = SpaceXLaunchSectionHeaderView()
         return h
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let launch = viewModel?.launches[indexPath.row] else { return }
+        showLaunchActions(launch, sourceView: tableView.cellForRow(at: indexPath))
     }
 }
 

@@ -32,6 +32,9 @@ struct SpaceXLaunch: Codable {
 
 struct SpaceXLaunchLinks: Codable {
     var patch: SpaceXLaunchPatchImage?
+    var wikipedia: String?
+    var article: String?
+    var webcast: String?
 }
 
 struct SpaceXLaunchPatchImage: Codable {

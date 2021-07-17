@@ -74,6 +74,7 @@ class SpaceXLaunchTableViewCell: UITableViewCell {
     }
     
     func setup() {
+        selectionStyle = .none
         backgroundColor = .clear
         contentView.addSubview(hStackView)
         hStackView.pinToParentView()

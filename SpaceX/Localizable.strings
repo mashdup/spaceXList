@@ -9,6 +9,12 @@
 "COMPANY" = "Company";
 "COMPANY_INFO_FORMAT" = "%@ was founded by %@ in %@. It has now %@ employees, %@ launch sites, and is valued at USD %@";
 
+"WHAT_DO_YOU_LIKE_TO_DO" = "What do you like to do?";
+"VIEW_ARTICLE" = "View article";
+"LOOKUP_WIKIPEDIA" = "Lookup Wikipedia";
+"CHECKOUT_VIDEOS" = "Checkout videos";
+"CANCEL" = "Cancel";
+
 "LAUNCHES" = "Launches";
 "MISSON" = "Mission";
 "DATE_TIME" = "Date/time";
