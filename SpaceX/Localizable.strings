@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  SpaceX
+
+  Created by Dillon Hoa on 16/07/2021.
+  
+*/
+
+"COMPANY" = "Company";
+"COMPANY_INFO_FORMAT" = "%@ was founded by %@ in %@. It has now %@ employees, %@ launch sites, and is valued at USD %@";
+
+"LAUNCHES" = "Launches";
+"MISSON" = "Mission";
+"DATE_TIME" = "Date/time";
+"ROCKET" = "Rocket";
+"DAYS" = "Days";
+"DAYS_SINCE_NOW" = "Days since now";
+"DAYS_FROM_NOW" = "Days from now";
+"SINCE" = "Since";
+"FROM" = "From";
+
+"GETTING_ROCKET" = "Getting rocket";
+
+"YEAR" = "Year";
+"ALL_YEARS" = "All years";
+"SUCCESS" = "Success";
+"FAILED" = "Failed";
+"ALL" = "All";
+"SUCCESSFUL_LAUNCH" = "Successful launch";
+"ASCENDING_DATE" = "Ascending date";
+"SELECT_YEAR_MESSAGE" = "Filter by year or view all years";
+"UPDATE_FILTERS" = "Update filters";
