@@ -105,8 +105,10 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 5 colors.
+  /// This `R.color` struct is generated, and contains static references to 6 colors.
   struct color {
+    /// Color `Orange`.
+    static let orange = Rswift.ColorResource(bundle: R.hostingBundle, name: "Orange")
     /// Color `PrimaryAccent`.
     static let primaryAccent = Rswift.ColorResource(bundle: R.hostingBundle, name: "PrimaryAccent")
     /// Color `PrimaryBackground`.
@@ -117,6 +119,15 @@ struct R: Rswift.Validatable {
     static let red = Rswift.ColorResource(bundle: R.hostingBundle, name: "Red")
     /// Color `SecondaryBackground`.
     static let secondaryBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "SecondaryBackground")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Orange", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func orange(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.orange, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "PrimaryAccent", bundle: ..., traitCollection: ...)`
@@ -160,6 +171,14 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func secondaryBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.secondaryBackground, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Orange", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func orange(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.orange.name)
     }
     #endif
 

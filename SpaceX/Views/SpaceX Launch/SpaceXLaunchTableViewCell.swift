@@ -18,8 +18,15 @@ class SpaceXLaunchTableViewCell: UITableViewCell {
                 missionImageView.kf.setImage(with: URL(string: imageURLString))
             }
             statsView.launch = launch
-            successImageView.image = UIImage(systemName: launch?.success == true ? "checkmark" : "xmark")
-            successImageView.tintColor = launch?.success == true ? R.color.primaryAccent() : R.color.red()
+            if let success = launch?.success {
+                
+                successImageView.image = UIImage(systemName: success == true ? "checkmark" : "xmark")
+                successImageView.tintColor = success == true ? R.color.primaryAccent() : R.color.red()
+            } else {
+                successImageView.image = UIImage(systemName: "circle")
+                successImageView.tintColor = R.color.orange()
+                
+            }
             
             getRocket()
         }
