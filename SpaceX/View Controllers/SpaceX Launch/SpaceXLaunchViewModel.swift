@@ -9,7 +9,7 @@ import Foundation
 
 class SpaceXLaunchViewModel {
     
-    var service = SpaceXLaunchService()
+    var service: LaunchService = SpaceXLaunchService()
     
     var didUpdateCompanyInfo: (() -> Void)?
     

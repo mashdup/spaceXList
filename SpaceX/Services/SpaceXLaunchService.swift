@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class SpaceXLaunchService {
+class SpaceXLaunchService: LaunchService {
     func getCompanyInfo(_ completion: @escaping ((Swift.Result<SpaceXCompanyInfo, Error>) -> Void)) {
         NetworkManager.default.request(SpaceXCompanyInfo.self, method: .get, path: "company", completion: { result in
             completion(result)

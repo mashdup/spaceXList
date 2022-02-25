@@ -37,6 +37,8 @@
 		51191DFF26A319B200408257 /* SpaceXLaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51191DFE26A319B200408257 /* SpaceXLaunchCoordinator.swift */; };
 		51191E0226A31A4F00408257 /* SpaceXLaunchFiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51191E0126A31A4F00408257 /* SpaceXLaunchFiltersViewController.swift */; };
 		51191E0526A3217D00408257 /* SpaceXMissionSuccessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51191E0426A3217D00408257 /* SpaceXMissionSuccessFilter.swift */; };
+		51D4DEE127C8EE2700E507A9 /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4DEE027C8EE2700E507A9 /* LaunchService.swift */; };
+		51D4DEE427C8EECF00E507A9 /* MockLaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4DEE327C8EECF00E507A9 /* MockLaunchService.swift */; };
 		B5213E26DA619B06E31F05C9 /* Pods_SpaceX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEFA05855DF7D62AC0D9792F /* Pods_SpaceX.framework */; };
 		EAF0794F881C4467A957977C /* Pods_SpaceX_SpaceXUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72544ABB2CB25DDF9260CDF8 /* Pods_SpaceX_SpaceXUITests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +98,8 @@
 		51191DFE26A319B200408257 /* SpaceXLaunchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchCoordinator.swift; sourceTree = "<group>"; };
 		51191E0126A31A4F00408257 /* SpaceXLaunchFiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXLaunchFiltersViewController.swift; sourceTree = "<group>"; };
 		51191E0426A3217D00408257 /* SpaceXMissionSuccessFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXMissionSuccessFilter.swift; sourceTree = "<group>"; };
+		51D4DEE027C8EE2700E507A9 /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
+		51D4DEE327C8EECF00E507A9 /* MockLaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLaunchService.swift; sourceTree = "<group>"; };
 		5A2FB596948DA2FBAD17578D /* Pods-SpaceX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX.release.xcconfig"; path = "Target Support Files/Pods-SpaceX/Pods-SpaceX.release.xcconfig"; sourceTree = "<group>"; };
 		5C0A3405AE05A3EEF11AD0CE /* Pods-SpaceX-SpaceXUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceX-SpaceXUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceX-SpaceXUITests/Pods-SpaceX-SpaceXUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		72544ABB2CB25DDF9260CDF8 /* Pods_SpaceX_SpaceXUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceX_SpaceXUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,7 @@
 				51191DC826A2122F00408257 /* Launch Deletegates */,
 				51191DEE26A2DC3000408257 /* Models */,
 				51191DE926A2D92700408257 /* Network */,
+				51D4DEDF27C8EE1100E507A9 /* Protocols */,
 				51191DE826A2D92200408257 /* Services */,
 				51191DCC26A2134C00408257 /* View Controllers */,
 				51191DE226A21E2100408257 /* Views */,
@@ -189,6 +194,7 @@
 		51191DAE26A2099100408257 /* SpaceXTests */ = {
 			isa = PBXGroup;
 			children = (
+				51D4DEE227C8EEBF00E507A9 /* MockServices */,
 				51191DAF26A2099100408257 /* SpaceXTests.swift */,
 				51191DB126A2099100408257 /* Info.plist */,
 			);
@@ -336,6 +342,22 @@
 				51191E0426A3217D00408257 /* SpaceXMissionSuccessFilter.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		51D4DEDF27C8EE1100E507A9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				51D4DEE027C8EE2700E507A9 /* LaunchService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		51D4DEE227C8EEBF00E507A9 /* MockServices */ = {
+			isa = PBXGroup;
+			children = (
+				51D4DEE327C8EECF00E507A9 /* MockLaunchService.swift */,
+			);
+			path = MockServices;
 			sourceTree = "<group>";
 		};
 		95B35CE1D1321D783EC5073D /* Pods */ = {
@@ -613,6 +635,7 @@
 			files = (
 				51191DEB26A2DAAF00408257 /* NetworkManager.swift in Sources */,
 				51191E0526A3217D00408257 /* SpaceXMissionSuccessFilter.swift in Sources */,
+				51D4DEE127C8EE2700E507A9 /* LaunchService.swift in Sources */,
 				51191DF826A2FD5C00408257 /* SpaceXRocket.swift in Sources */,
 				51191DCF26A2136C00408257 /* InitialViewController.swift in Sources */,
 				51191DE726A21F6200408257 /* String+Localisable.swift in Sources */,
@@ -641,6 +664,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D4DEE427C8EECF00E507A9 /* MockLaunchService.swift in Sources */,
 				51191DB026A2099100408257 /* SpaceXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,6 +866,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = SpaceXTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (

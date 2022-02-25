@@ -145,7 +145,7 @@ class SpaceXLaunchFiltersViewController: UIViewController {
             let year = Calendar.current.component(.year, from: date)
             return year
         })
-        let years = Set(yearsArray)
+        let years = Set(yearsArray).sorted().reversed()
         alert.addAction(UIAlertAction(title: "ALL_YEARS".localised(), style: .default, handler: { _ in
             self.filters.year = nil
             self.yearPickerButton.setTitle("ALL_YEARS".localised(), for: .normal)
